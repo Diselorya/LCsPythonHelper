@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "lcshelper"
-version = "0.0.1"
+name = "diseloryaHelper"
+version = "0.0.0.2"
 description = "Lc's python helper."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -12,12 +12,10 @@ license = {file = "LICENSE"}
 authors = [
   {name = "Diselorya"},
 ]
-keywords=['python', 'lchelper', 'diselorya']
+keywords=['python', 'lc-base-helper', 'diselorya']
 dependencies = [
     'PyPDF2',
     'pytesseract', 
-    'pdfplumber', 
-    'unicodedata', 
     'pangu', 
     'opencv-python'
 ]
