@@ -2,10 +2,10 @@ from PIL import Image
 import cv2
 import numpy
 import pytesseract
-import chineseLanguageHelper as ch
-import pathHelper as ph
-import terminalHelper as th
-import stringHelper as sh
+from . import chineseLanguageHelper as ch
+from . import pathHelper as ph
+from . import terminalHelper as th
+from . import stringHelper as sh
 
 def get_text_from_image_with_save(image_data: bytes, save_path_name: str):
     # 图片输出为文件

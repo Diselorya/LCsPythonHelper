@@ -2,9 +2,9 @@ import os
 import PyPDF2
 import re
 import pangu
-import stringHelper as sh
-import pdfHelper as ph
-import chineseLanguageHelper as ch
+from . import stringHelper as sh
+from . import chineseLanguageHelper as ch
+from . import ocrHelper as ocr
 
 
 def get_pdf_save_picture_path(pdf_file_name: str, page_num: int, image_count: int, output_path: str = '', picture_extname: str = 'jpg', folder_suffix: str = '.images'):
@@ -151,7 +151,7 @@ def get_char_count_including_picture(pdf_reader: PyPDF2.PdfReader, output_path: 
             image_count = 0
             for image in page.images:
                 image_count += 1
-                text = ph.get_text_from_image_with_save(image.data, get_pdf_save_picture_path(filename_prefix, page_count, image_count, output_path))
+                text = ocr.get_text_from_image_with_save(image.data, get_pdf_save_picture_path(filename_prefix, page_count, image_count, output_path))
                 images_texts.append(text)
                 # print(f'Image-P{page_count}-{image_count}：\n{text}')
                 extracted_text += text
